@@ -1,15 +1,12 @@
-import './App.scss';
+import React from 'react';
+import '../stylesheets/App.scss';
+//import './Header';
+import Header from './Header';
 
 function App() {
   return (
     <div>
-      <header>
-        <div className="page__header">
-          <a href="./index.html" title="Home">
-            <img className="page__header--logo" src="./assets/images/Logo_cards.png" alt="logo page" />
-          </a>
-        </div>
-      </header>
+      <Header />
       <div className="container__generator">
         <div className="preview">
           <div className="preview__reset">

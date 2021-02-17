@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/App.scss';
-//import './Header';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -240,18 +240,7 @@ function App() {
           </section>
         </form>
       </div>
-      <footer className="footer">
-        <div className="footer__container">
-          <div className="footer__copy">
-            <p>Look Like Loop cards &copy; 2021</p>
-          </div>
-          <div>
-            <a href="https://adalab.es/" target="_blank">
-              <img className="footer__logo" src="./assets/images/logo-adalab.png" alt="logo adalab" />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

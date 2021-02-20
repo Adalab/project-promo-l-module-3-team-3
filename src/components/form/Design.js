@@ -3,7 +3,6 @@ import "../../stylesheets/form/Design.scss";
 
 function Design() {
     return (
-
         <section className='collapsable'>
             <div className='header-container collapsable__content js-collapsable'>
                 <div className='collapsable__header'>
@@ -19,6 +18,7 @@ function Design() {
                     <h3 className='collapsable__colors--title'>Colores</h3>
                 </div>
                 <div className='collapsable__content design'>
+                    
                     <label className='display-block design__square-label'>
                         <input
                             type='radio'

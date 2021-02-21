@@ -1,3 +1,4 @@
+import "../../stylesheets/form/share.scss";
 
 const Share = (props) =>
     <> 

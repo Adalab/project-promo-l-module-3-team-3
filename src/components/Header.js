@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/Header.scss';
+import '../stylesheets/header.scss';
 import logoCards from '../images/Logo_cards.png';
 
 class Header extends React.Component {

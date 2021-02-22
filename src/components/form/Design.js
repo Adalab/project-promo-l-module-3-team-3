@@ -29,39 +29,27 @@ function Design() {
                         </ul>
                     </label>
 
-                    <label className='display-block design__square-label'>
-                        <input
-                            type='radio'
-                            name='palette'
-                            className='design__square-radio js-palette'
-                            value='2'
-                        />
-                        <ul className='palette-2'>
-                            <li className='design__square-color color-1'></li>
-                            <li className='design__square-color color-2'></li>
-                            <li className='design__square-color color-3'></li>
-                        </ul>
-                    </label>
+          <label className="display-block design__square-label">
+            <input type="radio" name="palette" className="design__square-radio js-palette" value="2" />
+            <ul className="palette-2">
+              <li className="design__square-color color-1"></li>
+              <li className="design__square-color color-2"></li>
+              <li className="design__square-color color-3"></li>
+            </ul>
+          </label>
 
-                    <label className='display-block design__square-label'>
-                        <input
-                            type='radio'
-                            name='palette'
-                            className='design__square-radio js-palette'
-                            value='3'
-                        />
-                        <ul className='palette-3'>
-                            <li className='design__square-color color-1'></li>
-                            <li className='design__square-color color-2'></li>
-                            <li className='design__square-color color-3'></li>
-                        </ul>
-                    </label>
-                </div>
-            </div>
-        </section>
-
-
-    );
+          <label className="display-block design__square-label">
+            <input type="radio" name="palette" className="design__square-radio js-palette" value="3" />
+            <ul className="palette-3">
+              <li className="design__square-color color-1"></li>
+              <li className="design__square-color color-2"></li>
+              <li className="design__square-color color-3"></li>
+            </ul>
+          </label>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Design;

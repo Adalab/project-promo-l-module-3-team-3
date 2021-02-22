@@ -1,7 +1,11 @@
 import React from "react";
 
-function Input(props) {
+function InputGroup(props) {
   return (
+    <>
+    <label htmlFor={props.htmlFor} className='fillin__label'>
+      {props.labelText}
+    </label>
     <input
       type={props.type}
       id={props.id}
@@ -9,6 +13,8 @@ function Input(props) {
       placeholder={props.placeholder}
       required
     />
+    </>
+    
   );
 }
-export default Input;
+export default InputGroup;

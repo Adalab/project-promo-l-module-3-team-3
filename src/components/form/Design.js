@@ -1,5 +1,5 @@
 import React from "react";
-import "../../stylesheets/form/Design.scss";
+import "../../stylesheets/form/design.scss";
 
 function Design() {
     return (

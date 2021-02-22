@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/Footer.scss';
+import '../stylesheets/footer.scss';
 import logoAdalab from '../images/logo-adalab.png';
 
 class Footer extends React.Component {

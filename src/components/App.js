@@ -8,12 +8,12 @@ import Preview from './preview/Preview';
 function App() {
   return (
     <div>
-        <Header />
-        <div className='container__generator'>
-          <Preview />
-          <Form />
-        </div>
-        <Footer />      
+      <Header />
+      <div className="container__generator">
+        <Preview />
+        <Form />
+      </div>
+      <Footer />
     </div>
   );
 }

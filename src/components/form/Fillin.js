@@ -1,19 +1,15 @@
 import React from "react";
 import "../../stylesheets/form/fillin.scss";
 import InputGroup from "./InputGroup";
+import Collapsable from './Collapsable';
 
 function Fillin() {
   return (
     <section className='collapsable'>
-      <div className='header-container collapsable__content js-collapsable'>
-        <div className='collapsable__header'>
-          <i className='collapsable__header--icon fa fa-keyboard-o'></i>
-          <h2 className='collapsable__header--title'>Rellena</h2>
-        </div>
-        <div className='collapsable__header2'>
-          <i className='collapsable__header--arrow fas fa-chevron-down js-collapsable-arrow'></i>
-        </div>
-      </div>
+       <Collapsable
+            name = 'Rellena'
+            icon='collapsable__header--icon fa fa-keyboard-o'
+        />
       <div className='fillin-content collapsable__box js-collapsable-close'>
         <InputGroup
           htmlFor='name'

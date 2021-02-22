@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../stylesheets/preview/Card.scss';
+import '../../stylesheets/preview/card.scss';
 
 function Card() {
   return (

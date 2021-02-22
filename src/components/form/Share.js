@@ -1,7 +1,12 @@
 import "../../stylesheets/form/share.scss";
+import Collapsable from './Collapsable';
 
 const Share = (props) =>
-    <> 
+    <section className='collapsable collapsable3'>
+        <Collapsable
+            name = 'Comparte'
+            icon='collapsable__header--icon fas fa-share-alt'
+        />
         <div className='share-container collapsable__box js-collapsable-close'>
             <div className='collapsable__share js-createbtn-container'>
                 <i className='collapsable__share--icon far fa-address-card'></i>
@@ -23,7 +28,7 @@ const Share = (props) =>
                 </a>
             </button>
         </div>
-    </>
+    </section>
  
 
 export default Share;

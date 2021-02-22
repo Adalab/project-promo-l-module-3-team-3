@@ -99,14 +99,7 @@ function Form() {
           />
         </div>
       </section>
-      <section className='collapsable collapsable3'>
-        <Collapsable
-        name = 'Comparte'
-        icon='collapsable__header--icon fas fa-share-alt'
-       />
       <Share />
-        
-      </section>
     </form>
   );
 }

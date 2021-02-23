@@ -1,6 +1,7 @@
 import React from "react";
 import "../../stylesheets/form/design.scss";
 import Collapsable from './Collapsable';
+import Palette from './Palette';
 
 function Design() {
     return (
@@ -15,19 +16,7 @@ function Design() {
                 </div>
                 <div className='collapsable__content design'>
                     
-                    <label className='display-block design__square-label'>
-                        <input
-                            type='radio'
-                            name='palette'
-                            className='design__square-radio js-palette'
-                            value='1'
-                        />
-                        <ul className='palette-1'>
-                            <li className='design__square-color color-1'></li>
-                            <li className='design__square-color color-2'></li>
-                            <li className='design__square-color color-3'></li>
-                        </ul>
-                    </label>
+                    <Palette/>
 
           <label className="display-block design__square-label">
             <input type="radio" name="palette" className="design__square-radio js-palette" value="2" />

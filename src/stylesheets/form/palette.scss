@@ -1,0 +1,56 @@
+@import '../core/variables';
+
+.design__square-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px 20px 20px 0px;
+  }
+  .design__square-color {
+    width: 30px;
+    height: 25px;
+    display: inline-block;
+    margin: -2px;
+  }
+  .design__square-radio {
+    align-items: center;
+  }
+  .palette-1 {
+    padding-left: 10px;
+    .color-1 {
+      background-color: $darkblueGreen;
+    }
+    .color-2 {
+      background-color: #438792;
+    }
+    .color-3 {
+      background-color: $mint;
+    }
+  }
+  
+  .palette-2 {
+    padding-left: 10px;
+    .color-1 {
+      background-color: #420101;
+    }
+    .color-2 {
+      background-color: #bd1010;
+    }
+    .color-3 {
+      background-color: #e95626;
+    }
+  }
+  
+  .palette-3 {
+    padding-left: 10px;
+    .color-1 {
+      background-color: #3e5b65;
+    }
+    .color-2 {
+      background-color: #eab052;
+    }
+    .color-3 {
+      background-color: #a0c0cf;
+    }
+  }

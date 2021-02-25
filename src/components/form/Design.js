@@ -6,10 +6,10 @@ import Palette from './Palette';
 function Design() {
     return (
         <section className='collapsable'>
-            <Collapsable
-                name='Diseña'
-                icon='collapsable__header--icon far fa-object-ungroup'
-            />
+            <Collapsable title='Diseña' name=''>
+                <h2 className='collapsable__header--title'>Diseña</h2>
+                <i className='collapsable__header--icon far fa-object-ungroup'></i>
+            </Collapsable>
             <div className='collapsable__box js-collapsable-close'>
                 <div className='collapsable__colors'>
                     <h3 className='collapsable__colors--title'>Colores</h3>

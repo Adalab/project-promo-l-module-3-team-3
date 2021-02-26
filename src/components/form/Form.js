@@ -8,15 +8,15 @@ import Fillin from './Fillin';
 function Form() {
   return (
     <form className="form js-submit">
-      <Collapsable>
+      <Collapsable name="Diseña" icon="fas fa-chevron-down" open>
         <Design />
       </Collapsable>
 
-      <Collapsable>
+      <Collapsable name="Rellena" icon="fas fa-chevron-down">
         <Fillin />
       </Collapsable>
 
-      <Collapsable>
+      <Collapsable name="Comparte" icon="fas fa-chevron-down">
         <Share />
       </Collapsable>
     </form>

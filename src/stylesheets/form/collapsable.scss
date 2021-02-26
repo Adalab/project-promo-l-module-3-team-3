@@ -1,18 +1,42 @@
 @import '../core/variables';
 
 .collapsable {
-  .collapsable__header {
+  border-bottom: 1px solid $colorFooter;
+
+  &__header {
     cursor: pointer;
     display: flex;
     flex-direction: row;
-
-    .collapsable__header--title {
-      flex-grow: 1;
+    padding: 10px 0 10px;
+    align-items: center;
+    &:hover {
+        color: $orange;
+      }
+    
+    &--icon {
+      color: $orange;
+      font-size: 18px;
+      margin-right: 10px;
     }
-  }
 
-  .collapsable__header--arrow {
-    transition: transform 0.5s ease;
+    &--title {
+      flex-grow: 1;
+      font-family: $fontOpen;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: $metal;
+      &:hover {
+        color: $orange;
+      }
+    }
+
+    &--arrow {
+      color: $metal;
+      transition: transform 0.5s ease;
+      &:hover {
+        color: $orange;
+      }
+    }
   }
 
   &.close {
@@ -25,46 +49,3 @@
     }
   }
 }
-
-/*.collapsable {
-    padding: 27px 30px 0 40px;
-    border-bottom: 1px solid $colorFooter;
-  }
-  .collapsable3 {
-    border-bottom: none;
-  }
-  
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-  .collapsable__header {
-    display: flex;
-    flex-direction: row;
-  
-    &--icon {
-      color: $orange;
-      width: 16px;
-      height: 18px;
-      margin-right: 10px;
-    }
-    &--title {
-      font-family: $fontOpen;
-      font-weight: 600;
-      font-size: 18px;
-      text-transform: uppercase;
-      color: $metal;
-    }
-    &--arrow {
-      width: 16px;
-      height: 18px;
-      font-size: 18px;
-      color: $metal;
-      margin-right: 20px;
-    }
-  }
-  .collapsable__content {
-    margin-top: 6px;
-  }*/

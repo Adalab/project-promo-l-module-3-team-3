@@ -1,44 +1,51 @@
 @import '../core/variables';
 
 .collapsable {
-    padding: 27px 30px 0 40px;
-    border-bottom: 1px solid $colorFooter;
-  }
-  .collapsable3 {
-    border-bottom: none;
-  }
-  
-  .header-container {
+  border-bottom: 1px solid $colorFooter;
+
+  &__header {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 25px;
-  }
-  .collapsable__header {
-    display: flex;
-    flex-direction: row;
-  
+    padding: 10px 0 10px;
+    align-items: center;
+    &:hover {
+        color: $orange;
+      }
+    
     &--icon {
       color: $orange;
-      width: 16px;
-      height: 18px;
+      font-size: 18px;
       margin-right: 10px;
     }
+
     &--title {
+      flex-grow: 1;
       font-family: $fontOpen;
-      font-weight: 600;
       font-size: 18px;
       text-transform: uppercase;
       color: $metal;
+      &:hover {
+        color: $orange;
+      }
     }
+
     &--arrow {
-      width: 16px;
-      height: 18px;
-      font-size: 18px;
       color: $metal;
-      margin-right: 20px;
+      transition: transform 0.5s ease;
+      &:hover {
+        color: $orange;
+      }
     }
   }
-  .collapsable__content {
-    margin-top: 6px;
+
+  &.close {
+    .collapsable__header--arrow {
+      transform: rotate(180deg);
+    }
+
+    .collapsable__content {
+      display: none;
+    }
   }
+}

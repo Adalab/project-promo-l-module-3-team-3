@@ -51,8 +51,11 @@ class App extends React.Component {
       <div>
         <Header />
         <div className="container__generator">
-          {/* <ResetButton /> */}
-          <Preview palette={this.state.palette} />
+          <div className="preview">
+            <ResetButton />
+            <Preview palette={this.state.palette} />
+          </div>
+
           <Form palette={this.state.palette} handlePalette={this.handlePalette} />
         </div>
         <Footer />

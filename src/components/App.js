@@ -4,14 +4,23 @@ import Header from './Header';
 import Footer from './Footer';
 import Form from './form/Form';
 import Preview from './preview/Preview';
+import ResetButton from './preview/ResetButton';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       palette: 1,
+      name: '',
+      job: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
     };
     this.handlePalette = this.handlePalette.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handlePalette(value) {
@@ -20,17 +29,31 @@ class App extends React.Component {
     });
   }
 
+  handleInput(data) {
+    this.setState({
+      [data.inputName]: data.inputValue,
+    });
+  }
+
+  handleReset() {
+    this.setState({
+      name: '',
+      job: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+    });
+  }
+
   render() {
     return (
       <div>
         <Header />
         <div className="container__generator">
-          <Preview
-          palette={this.state.palette} />
-          <Form
-          palette={this.state.palette}
-          handlePalette={this.handlePalette}
-          />
+          {/* <ResetButton /> */}
+          <Preview palette={this.state.palette} />
+          <Form palette={this.state.palette} handlePalette={this.handlePalette} />
         </div>
         <Footer />
       </div>

@@ -3,6 +3,7 @@ import React from 'react';
 class InputGroup extends React.Component {
   constructor(props) {
     super(props);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(ev) {
@@ -33,7 +34,7 @@ class InputGroup extends React.Component {
 
 InputGroup.defaultProps = {
   type: 'text',
-  requiered: true,
+  required: true,
 };
 
 export default InputGroup;

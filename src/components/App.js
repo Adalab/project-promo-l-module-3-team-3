@@ -11,7 +11,8 @@ function App() {
       <Header />
       <div className="container__generator">
         <Preview />
-        <Form />
+        <Form 
+        />
       </div>
       <Footer />
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../../stylesheets/preview/card.scss';
 
 function Card() {
-  return (
+    return (
     <section>
       <article className="preview__container js-card">
         <h2 className="preview__container--h2 js-card-name js-card">Nombre Apellidos</h2>

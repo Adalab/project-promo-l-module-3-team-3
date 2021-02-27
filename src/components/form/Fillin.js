@@ -29,7 +29,7 @@ function Fillin() {
           placeholder="Ej: Front-end unicorn"
         />
 
-        <label for="photo" class="fillin__label">
+        <label htmlFor="photo" className="fillin__label">
           Imagen de perfil
         </label>
 

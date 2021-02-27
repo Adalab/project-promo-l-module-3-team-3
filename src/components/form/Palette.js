@@ -4,6 +4,10 @@ import "../../stylesheets/form/palette.scss";
 class Palette extends React.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick(ev) {
+        console.log(ev);
     }
 
     render() {
@@ -18,6 +22,7 @@ class Palette extends React.Component {
                         name='palette'
                         className='design__square-radio js-palette'
                         value={`${this.props.i}`}
+                        onClick={this.handleClick}
                     />
                     <ul className={`palette-${paletteId}`}>
                         <li className='design__square-color color-1'></li>

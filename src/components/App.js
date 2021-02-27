@@ -52,11 +52,16 @@ class App extends React.Component {
         <Header />
         <div className="container__generator">
           <div className="preview">
-            <ResetButton />
-            <Preview palette={this.state.palette} />
+            <ResetButton handleReset={this.handleReset} />
+            <Preview palette={this.state.palette} data={this.state} />
           </div>
 
-          <Form palette={this.state.palette} handlePalette={this.handlePalette} />
+          <Form
+            data={this.state}
+            handleInput={this.handleInput}
+            palette={this.state.palette}
+            handlePalette={this.handlePalette}
+          />
         </div>
         <Footer />
       </div>

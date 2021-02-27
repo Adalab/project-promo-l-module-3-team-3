@@ -14,8 +14,8 @@ class Preview extends React.Component {
     return (
       <section>
         <article className={`preview__container js-card palette-${color}`}>
-          <h2 className="preview__container--h2 js-card-name js-card">Nombre Apellidos</h2>
-          <p className="preview__container--h3 js-card-job js-card">Front-end developer</p>
+          <h2 className="preview__container--h2 js-card-name js-card">{this.props.data.name || 'Nombre Apellidos'}</h2>
+          <p className="preview__container--h3 js-card-job js-card">{this.props.data.job || 'Front-end developer'}</p>
           <div className="preview__container--line"></div>
           <img className="preview__container--photo js__profile-image js-big-photo" />
           <ul className="card__icons js-card">

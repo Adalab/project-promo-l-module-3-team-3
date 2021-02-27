@@ -19,7 +19,7 @@ class InputGroup extends React.Component {
           {this.props.text}
         </label>
         <input
-          className={this.props.className}
+          className={this.props.className} // esto está bien?
           placeholder={this.props.placeText}
           type={this.props.type}
           name={this.props.name}

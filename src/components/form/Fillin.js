@@ -3,15 +3,12 @@ import '../../stylesheets/form/fillin.scss';
 import InputGroup from './InputGroup';
 
 class Fillin extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <section className="collapsable">
         <div className="fillin-content collapsable__box js-collapsable-close">
           <InputGroup
+            className="fillin__input js-input-name js-input-text"
             text="Nombre completo"
             placeText="Ej: Sally Jill"
             name="name"
@@ -20,12 +17,12 @@ class Fillin extends React.Component {
           />
 
           <InputGroup
+            className="fillin__input js-input-job js-input-text"
             text="Puesto"
             placeText="Ej: Front-end unicorn"
             name="job"
             handleInput={this.props.handleInput}
             value={this.props.data.job}
-            className="fillin__input js-input-job js-input-text"
           />
 
           <label htmlFor="photo" className="fillin__label">
@@ -45,38 +42,38 @@ class Fillin extends React.Component {
           </div>
 
           <InputGroup
-            htmlFor="email"
-            labelText="Email"
-            type="email"
-            id="email"
             className="fillin__input js-input-email js-input-text"
-            placeholder="Ej: sally-hill@gmail.com"
+            text="Email"
+            placeText="Ej: sally-hill@gmail.com"
+            name="email"
+            handleInput={this.props.handleInput}
+            value={this.props.data.email}
           />
           <InputGroup
-            htmlFor="phone"
-            labelText="Teléfono"
-            type="text"
-            id="phone"
             className="fillin__input js-input-phone js-input-text"
-            placeholder="Ej: 555-55-55-55"
+            text="Teléfono"
+            placeText="Ej: 555-55-55-55"
+            name="phone"
+            handleInput={this.props.handleInput}
+            value={this.props.data.phone}
           />
 
           <InputGroup
-            htmlFor="linkedin"
-            labelText="Linkedin"
-            type="text"
-            id="linkedin"
             className="fillin__input js-input-linkedin js-input-text"
-            placeholder="Ej: linkedin.com/in/sally.hill"
+            text="Linkedin"
+            placeText="Ej: linkedin.com/in/sally.hill"
+            name="linkedin"
+            handleInput={this.props.handleInput}
+            value={this.props.data.linkedin}
           />
 
           <InputGroup
-            htmlFor="github"
-            labelText="GitHub"
-            type="text"
-            id="github"
             className="fillin__input js-input-github js-input-text"
-            placeholder="Ej: @sally-hill"
+            text="GitHub"
+            placeText="Ej: @sally-hill"
+            name="github"
+            handleInput={this.props.handleInput}
+            value={this.props.data.github}
           />
         </div>
       </section>

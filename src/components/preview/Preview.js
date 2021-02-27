@@ -1,7 +1,7 @@
 import React from 'react';
 import ResetButton from './ResetButton';
-import Card from './Card';
 import '../../stylesheets/preview/preview.scss';
+
 
 class Preview extends React.Component {
   constructor(props) {

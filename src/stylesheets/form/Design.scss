@@ -7,7 +7,7 @@
 //   .collapsable3 {
 //     border-bottom: none;
 //   }
-  
+
 //   .header-container {
 //     display: flex;
 //     flex-direction: row;
@@ -17,7 +17,7 @@
 //   .collapsable__header {
 //     display: flex;
 //     flex-direction: row;
-  
+
 //     &--icon {
 //       color: $orange;
 //       width: 16px;
@@ -39,15 +39,13 @@
 //       margin-right: 20px;
 //     }
 //   }
-  .collapsable__content {
-    margin-top: 6px;
-  }
-  
-  .collapsable__colors--title {
-    font-family: $fontOpen;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: $metal;
-  }
-  
-  
+.collapsable__content {
+  margin-top: 6px;
+}
+
+.collapsable__colors--title {
+  font-family: $fontOpen;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $metal;
+}

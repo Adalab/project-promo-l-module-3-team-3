@@ -3,9 +3,7 @@ import '../../stylesheets/form/design.scss';
 import Palette from './Palette';
 
 class Design extends React.Component {
-
   render() {
-
     return (
       <section className="collapsable">
         <div className="collapsable__colors">

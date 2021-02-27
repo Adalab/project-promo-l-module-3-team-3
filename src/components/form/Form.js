@@ -5,11 +5,12 @@ import Design from './Design';
 import Share from './Share';
 import Fillin from './Fillin';
 
-function Form() {
+const Form = props => {
   return (
     <form className="form js-submit">
       <Collapsable name="Diseña" icon="far fa-object-ungroup" open>
-        <Design />
+        <Design 
+        handlePalette={props.handlePalette}/>
       </Collapsable>
 
       <Collapsable name="Rellena" icon="fa fa-keyboard-o">

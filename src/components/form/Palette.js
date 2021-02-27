@@ -7,7 +7,8 @@ class Palette extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(ev) {
-        console.log(ev);
+        // console.log(ev.target.value);
+        this.props.handlePalette(ev.target.value);
     }
 
     render() {

@@ -1,15 +1,16 @@
 import React from 'react';
 import '../stylesheets/header.scss';
 import logoCards from '../images/Logo_cards.png';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   render() {
     return (
       <header>
         <div className="page__header">
-          <a href="./index.html" title="Home">
+          <Link to='/' title="Home">
             <img className="page__header--logo" src={logoCards} alt="logo page" />
-          </a>
+          </Link>
         </div>
       </header>
     );

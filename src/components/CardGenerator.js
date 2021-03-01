@@ -5,6 +5,10 @@ import Footer from './Footer';
 import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
+import GetAvatar from './form/GetAvatar';
+import Profile from './preview/Profile';
+import defaultImage from './preview/DefaultImage';
+
 
 class CardGenerator extends React.Component {
   constructor(props) {

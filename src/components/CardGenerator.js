@@ -3,8 +3,9 @@ import '../stylesheets/app.scss';
 import Header from './Header';
 import Form from './form/Form';
 import Preview from './preview/Preview';
+import Footer from './Footer';
 
-class Card extends React.Component {
+class CardGenerator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,9 +32,10 @@ class Card extends React.Component {
           handlePalette={this.handlePalette}
           />
         </div>
+        <Footer />
       </div>
     );
   }
 }
 
-export default Card;
+export default CardGenerator;

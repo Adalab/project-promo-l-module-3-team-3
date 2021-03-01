@@ -1,9 +1,11 @@
 import '../stylesheets/landing.scss';
 import logo from '../images/Logo_cards.png'
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 const Landing = () => {
     return (
+        <>
         <main className="main">
             <div className="main__content">
                 <img className="main__content--logo"
@@ -30,9 +32,11 @@ const Landing = () => {
                 </ul>
             </div>
             <button className="main__content--button">
-                <Link to='/card'> Comenzar</Link>
+                <Link to='/cardGenerator'> Comenzar</Link>
             </button>
         </main>
+        <Footer />
+        </>
     )
 }
 

@@ -85,6 +85,9 @@
     &:hover {
       background-color: #e47162;
       transform: scale(1.05);
+        &:focus {
+        outline: 0 none;
+      }
     }
   }
 }

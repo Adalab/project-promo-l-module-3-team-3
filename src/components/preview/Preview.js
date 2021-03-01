@@ -16,17 +16,21 @@ class Preview extends React.Component {
           <img className="preview__container--photo js__profile-image js-big-photo" />
           <ul className="card__icons js-card">
             <li className="card__icons--item1">
-              <a href="#" className="fas fa-mobile-alt icons js-card-phone card__icons--item2"></a>
+              {this.props.data.phone ?  <a href={`tel:${this.props.data.phone}`} className="fas fa-mobile-alt icons js-card-phone card__icons--item2"></a> : 
+              <span className="fas fa-mobile-alt icons js-card-phone card__icons--item2"></span>}
             </li>
             <li className="card__icons--item1">
               {this.props.data.email ?  <a href={`mailto:${this.props.data.email}`} className="far fa-envelope icons js-card-email card__icons--item2"></a> : 
               <span className="far fa-envelope icons js-card-email card__icons--item2"></span>}
             </li>
             <li className="card__icons--item1">
-              <a href="#" target="_blank" className="fab fa-linkedin-in icons js-card-linkedin card__icons--item2"></a>
+              {this.props.data.linkedin ?  <a href={`https://www.linkedin.com/in/${this.props.data.linkedin}`} target='_blank' className="fab fa-linkedin-in icons js-card-linkedin card__icons--item2"></a> : 
+              <span className="fab fa-linkedin-in icons js-card-linkedin card__icons--item2"></span>}
+
             </li>
             <li className="card__icons--item1">
-              <a href="#" target="_blank" className="fab fa-github-alt icons js-card-github card__icons--item2"></a>
+              {this.props.data.github ?  <a href={`https://www.github.com/${this.props.data.github}`} target='_blank' className="fab fa-github-alt icons js-card-github card__icons--item2"></a> : 
+              <span className="fab fa-github-alt icons js-card-github card__icons--item2"></span>}
             </li>
           </ul>
         </article>

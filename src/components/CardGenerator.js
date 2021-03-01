@@ -5,8 +5,6 @@ import Footer from './Footer';
 import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
-import GetAvatar from './form/GetAvatar';
-import Profile from './preview/Profile';
 import defaultImage from './preview/DefaultImage';
 
 
@@ -21,11 +19,17 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      isAvatarDefault: true,
+      profile: {
+        avatar: defaultImage
+      }
     };
     this.handlePalette = this.handlePalette.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
+
 
   handlePalette(value) {
     this.setState({
@@ -36,6 +40,17 @@ class CardGenerator extends React.Component {
   handleInput(data) {
     this.setState({
       [data.inputName]: data.inputValue,
+    });
+  }
+
+  updateAvatar(img) {
+    const {profile} = this.state;
+    this.setState(prevState => {
+      const newProfile = {...profile, avatar: img};
+      return {
+        profile: newProfile,
+        isAvatarDefault: false
+      }
     });
   }
 
@@ -66,6 +81,7 @@ class CardGenerator extends React.Component {
             handleInput={this.handleInput}
             palette={this.state.palette}
             handlePalette={this.handlePalette}
+            profile={this.state.profile.avatar}
           />
         </div>
         <Footer />

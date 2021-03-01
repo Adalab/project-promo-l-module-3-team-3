@@ -37,7 +37,7 @@ class GetAvatar extends Component {
     const {isAvatarDefault, avatar} = this.props;
     return (
       <div className="get-avatar">
-        <button className="get-avatar__trigger" type="button" onClick={this.handleFilePicker}>Get IMAGE!</button>
+        <button className="get-avatar__trigger" type="button" onClick={this.handleFilePicker}>Añadir imagen</button>
         
         <input type="file" ref={this.myFileField} className="get-avatar__upload-field" onChange={this.uploadImage} />
         
@@ -54,3 +54,7 @@ GetAvatar.propTypes = {
 };
 
 export default GetAvatar;
+
+
+
+          {/* <Profile avatar={this.props.profile.avatar} /> */}

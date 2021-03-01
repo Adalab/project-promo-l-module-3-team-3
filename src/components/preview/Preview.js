@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../stylesheets/preview/preview.scss';
+import Profile from '../preview/Profile';
 
 class Preview extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Preview extends React.Component {
           <p className="preview__container--h3 js-card-job js-card">{this.props.data.job || 'Front-end unicorn'}</p>
           <div className="preview__container--line"></div>
           <img className="preview__container--photo js__profile-image js-big-photo" />
+        {/* <Profile avatar={this.props.profile.avatar} /> */}
           <ul className="card__icons js-card">
             <li className="card__icons--item1">
               {this.props.data.phone ?  <a href={`tel:${this.props.data.phone}`} className="fas fa-mobile-alt icons js-card-phone card__icons--item2"></a> : 

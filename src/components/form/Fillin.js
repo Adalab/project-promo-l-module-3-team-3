@@ -2,7 +2,7 @@ import React from 'react';
 import '../../stylesheets/form/fillin.scss';
 import InputGroup from './InputGroup';
 import GetAvatar from './GetAvatar';
-import Profile from '../preview/Profile';
+
 
 class Fillin extends React.Component {
   render() {

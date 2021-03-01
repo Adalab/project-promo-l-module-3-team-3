@@ -54,7 +54,3 @@ GetAvatar.propTypes = {
 };
 
 export default GetAvatar;
-
-
-
-          {/* <Profile avatar={this.props.profile.avatar} /> */}

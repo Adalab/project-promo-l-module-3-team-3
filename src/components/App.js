@@ -1,41 +1,20 @@
-import React from 'react';
-import '../stylesheets/app.scss';
-import Header from './Header';
+import Landing from './Landing';
+import Card from './Card';
 import Footer from './Footer';
-import Form from './form/Form';
-import Preview from './preview/Preview';
+import { Link, Route, Switch } from 'react-router-dom';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      palette: 1,
-    };
-    this.handlePalette = this.handlePalette.bind(this);
-  }
 
-  handlePalette(value) {
-    this.setState({
-      palette: value,
-    });
-  }
-
-  render() {
+const App = () => {
     return (
-      <div>
-        <Header />
-        <div className="container__generator">
-          <Preview
-          palette={this.state.palette} />
-          <Form
-          palette={this.state.palette}
-          handlePalette={this.handlePalette}
-          />
-        </div>
-        <Footer />
-      </div>
+        <>
+        <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route path="/card" component={Card} />
+        </Switch>
+        <Footer path="/" />
+        
+        </>
     );
-  }
 }
 
 export default App;

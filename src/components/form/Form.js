@@ -10,7 +10,7 @@ class Form extends React.Component {
     return (
       <form className="form js-submit">
         <Collapsable name="Diseña" icon="far fa-object-ungroup" open>
-          <Design handlePalette={this.props.handlePalette} />
+          <Design data={this.props.data} handlePalette={this.props.handlePalette} />
         </Collapsable>
 
         <Collapsable name="Rellena" icon="fa fa-keyboard-o">

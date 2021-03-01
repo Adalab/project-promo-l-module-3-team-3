@@ -25,7 +25,7 @@ class CardGenerator extends React.Component {
 
   handlePalette(value) {
     this.setState({
-      palette: value,
+      palette: parseInt(value),
     });
   }
 
@@ -43,6 +43,7 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      palette: 1
     });
   }
 

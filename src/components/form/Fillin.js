@@ -10,7 +10,7 @@ class Fillin extends React.Component {
           <InputGroup
             className="fillin__input js-input-name js-input-text"
             text="Nombre completo"
-            placeText="Ej: Sally Jill"
+            placeText="Ej: Sally Hill"
             name="name"
             handleInput={this.props.handleInput}
             value={this.props.data.name}

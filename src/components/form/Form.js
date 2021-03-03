@@ -5,24 +5,24 @@ import Design from './Design';
 import Share from './Share';
 import Fillin from './Fillin';
 
-class Form extends React.Component {
-  render() {
-    return (
-      <form className="form js-submit">
-        <Collapsable name="Diseña" icon="far fa-object-ungroup" open>
-          <Design data={this.props.data} handlePalette={this.props.handlePalette} />
-        </Collapsable>
+const Form = (props) => {
+  const handleForm = (ev) => {
+    ev.preventDefault();
+  };
 
-        <Collapsable name="Rellena" icon="fa fa-keyboard-o">
-          <Fillin handleInput={this.props.handleInput} data={this.props.data} />
-        </Collapsable>
-
-        <Collapsable name="Comparte" icon="fas fa-share-alt">
-          <Share />
-        </Collapsable>
-      </form>
-    );
-  }
-}
+  return (
+    <form className="form js-submit" onSubmit={handleForm}>
+      <Collapsable name="Diseña" icon="far fa-object-ungroup" open>
+        <Design data={props.data} handlePalette={props.handlePalette} />
+      </Collapsable>
+      <Collapsable name="Rellena" icon="fa fa-keyboard-o">
+        <Fillin handleInput={props.handleInput} data={props.data} />
+      </Collapsable>
+      <Collapsable name="Comparte" icon="fas fa-share-alt">
+        <Share />
+      </Collapsable>
+    </form>
+  );
+};
 
 export default Form;

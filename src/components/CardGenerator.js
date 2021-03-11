@@ -6,6 +6,7 @@ import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
 
+
 class CardGenerator extends React.Component {
   constructor(props) {
     super(props);
@@ -17,11 +18,15 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      isAvatarDefault: true,
+      avatar: ''
     };
     this.handlePalette = this.handlePalette.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
+
 
   handlePalette(value) {
     this.setState({
@@ -33,6 +38,10 @@ class CardGenerator extends React.Component {
     this.setState({
       [data.inputName]: data.inputValue,
     });
+  }
+
+  updateAvatar(avatar) {
+    this.setState({ avatar: avatar });
   }
 
   handleReset() {
@@ -54,7 +63,7 @@ class CardGenerator extends React.Component {
         <div className="container__generator">
           <div className="preview">
             <ResetButton handleReset={this.handleReset} />
-            <Preview palette={this.state.palette} data={this.state} />
+            <Preview palette={this.state.palette} data={this.state} avatar={this.state.avatar} />
           </div>
 
           <Form
@@ -62,6 +71,8 @@ class CardGenerator extends React.Component {
             handleInput={this.handleInput}
             palette={this.state.palette}
             handlePalette={this.handlePalette}
+            avatar={this.state.avatar}
+            getAvatar={this.updateAvatar}
           />
         </div>
         <Footer />

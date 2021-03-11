@@ -19,7 +19,8 @@ class Form extends React.Component {
         </Collapsable>
 
         <Collapsable name="Comparte" icon="fas fa-share-alt">
-          <Share 
+          <Share
+            data={this.props.data}
             handleShare={this.props.handleShare} />
         </Collapsable>
       </form>

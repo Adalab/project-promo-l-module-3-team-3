@@ -42,8 +42,8 @@ class Preview extends React.Component {
   }
 }
 
-Preview.propTypes = {
-  avatar: PropTypes.string.isRequired
-};
+// Preview.propTypes = {
+//   avatar: PropTypes.string.isRequired
+// };
 
 export default Preview;

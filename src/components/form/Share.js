@@ -1,14 +1,17 @@
 import "../../stylesheets/form/share.scss";
-import Collapsable from './Collapsable';
 
-const Share = (props) =>
-    <section className='collapsable collapsable3 share__container collapsable__box js-collapsable-close'>
-            <div className='share__button js-createbtn-container'>
+const Share = (props) => {
+    const handleShare = () => {
+        props.handleShare();
+    };
+
+    return (
+    <section className='collapsable collapsable3 share__container'>
+            <button className='share__button' onClick={handleShare}>
                 <i className='share__button--icon far fa-address-card'></i>
-                <a href='#' className='share__button--text js-create-btn'>
                 Crear tarjeta
-                </a>
-            </div>            
+            </button>  
+
             <div className='share-card hidden js-share__container js-card-result'>
                 <h2 className='share-card__text js-created'>
                         La tarjeta ha sido creada:
@@ -21,5 +24,6 @@ const Share = (props) =>
                 </button>
             </div>
     </section>
- 
+    );
+}
 export default Share;

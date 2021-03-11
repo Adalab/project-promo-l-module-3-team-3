@@ -6,6 +6,7 @@
   border-bottom: 1px solid $colorFooter;
   margin: 30px 0 30px 0;
   padding: 30px;
+  font-family: $fontOpen;
 }
 .share__button {
   background-color: $orange;
@@ -13,16 +14,18 @@
   height: 50px;
   border-radius: 12px;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-  padding: 10px 17px 40px 17px;
-  font-family: $fontOpen;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 600;
   color: $colorWhite;
   text-transform: uppercase;
-
+  border: none;
+  cursor: pointer;
+  outline: 0 none;
+  justify-content: center;
+  padding-right: 7px;
+  
   &--icon {
-    width: 25px;
-    height: 22px;
-    margin: 2px 9px 1px 0;
+    padding: 0 9px 0 8px;
     font-size: 22px;
     color: $colorWhite;
   }

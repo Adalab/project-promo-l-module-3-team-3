@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
+import fetchApi from '../services/fetchApi';
 
 
 class CardGenerator extends React.Component {
@@ -19,12 +20,14 @@ class CardGenerator extends React.Component {
       linkedin: '',
       github: '',
       isAvatarDefault: true,
-      avatar: ''
+      avatar: '',
+      serverData: {},
     };
     this.handlePalette = this.handlePalette.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.handleShare = this.handleShare.bind(this);
   }
 
 
@@ -56,6 +59,25 @@ class CardGenerator extends React.Component {
     });
   }
 
+  handleShare() {
+    const userData = {
+      palette: parseInt(this.state.palette),
+      name: this.state.name,
+      job: this.state.job,
+      email: this.state.email,
+      phone: this.state.phone,
+      linkedin: this.state.linkedin,
+      github: this.state.github,
+      photo: this.state.avatar,
+    };
+    console.log(userData);
+    fetchApi(userData).then(serverData => {
+      this.setState({
+        serverData: {},
+      })
+    });
+  }
+
   render() {
     return (
       <div>
@@ -73,6 +95,7 @@ class CardGenerator extends React.Component {
             handlePalette={this.handlePalette}
             avatar={this.state.avatar}
             getAvatar={this.updateAvatar}
+            handleShare={this.handleShare}
           />
         </div>
         <Footer />

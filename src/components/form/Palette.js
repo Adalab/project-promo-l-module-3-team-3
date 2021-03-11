@@ -23,7 +23,7 @@ class Palette extends React.Component {
                         className='design__square-radio js-palette'
                         checked={this.props.i === this.props.palette}
                         value={`${this.props.i}`}
-                        onClick={this.handleClick}
+                        onChange={this.handleClick}
                     />
                     <ul className={`palette-${this.props.i}`}>
                         <li className='design__square-color color-1'></li>

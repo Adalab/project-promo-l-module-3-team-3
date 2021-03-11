@@ -14,7 +14,7 @@ class Form extends React.Component {
         </Collapsable>
 
         <Collapsable name="Rellena" icon="fa fa-keyboard-o">
-          <Fillin handleInput={this.props.handleInput} data={this.props.data} profile={this.props.profile}/>
+          <Fillin handleInput={this.props.handleInput} data={this.props.data} profile={this.props.profile} updateAvatar={this.props.updateAvatar}/>
         </Collapsable>
 
         <Collapsable name="Comparte" icon="fas fa-share-alt">

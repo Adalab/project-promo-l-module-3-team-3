@@ -8,6 +8,7 @@ import ResetButton from './preview/ResetButton';
 import defaultImage from './preview/DefaultImage';
 
 
+
 class CardGenerator extends React.Component {
   constructor(props) {
     super(props);
@@ -82,6 +83,7 @@ class CardGenerator extends React.Component {
             palette={this.state.palette}
             handlePalette={this.handlePalette}
             profile={this.state.profile.avatar}
+            updateAvatar={this.updateAvatar}
           />
         </div>
         <Footer />

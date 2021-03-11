@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../../stylesheets/form/design.scss';
+import '../../stylesheets/form/design.scss';
 import Palette from './Palette';
 
 class Design extends React.Component {

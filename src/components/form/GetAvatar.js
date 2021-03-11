@@ -47,10 +47,10 @@ class GetAvatar extends Component {
   }
 }
 
-GetAvatar.propTypes = {
-  isAvatarDefault: PropTypes.bool.isRequired,
-  avatar: PropTypes.string.isRequired,
-  updateAvatar: PropTypes.func.isRequired
-};
+// GetAvatar.propTypes = {
+//   isAvatarDefault: PropTypes.bool.isRequired,
+//   avatar: PropTypes.string.isRequired,
+//   updateAvatar: PropTypes.func.isRequired
+// };
 
 export default GetAvatar;

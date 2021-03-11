@@ -22,6 +22,16 @@ class CardGenerator extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
+  componentDidMount() {
+    const localStorageData = ls.get('data');
+    if (localStorageData) {
+      this.setState(localStorageData);
+    }
+  }
+
+  componentDidUpdate() {
+    ls.set('data', this.state);
+  }
 
   handlePalette(value) {
     this.setState({
@@ -43,7 +53,7 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
-      palette: 1
+      palette: 1,
     });
   }
 

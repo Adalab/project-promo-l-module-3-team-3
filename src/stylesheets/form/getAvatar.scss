@@ -1,9 +1,9 @@
-@import '../core/variables';
+@import "../core/variables";
 
 .get-avatar {
   display: flex;
 }
-.get-avatar__trigger {
+.get-avatar__label {
   width: 140px;
   height: 30px;
   margin-right: 20px;
@@ -12,6 +12,8 @@
   border-radius: 3px;
   background-color: $orange;
   color: $colorWhite;
+  text-align: center;
+  padding-top: 6px;
 }
 
 .get-avatar__upload-field {

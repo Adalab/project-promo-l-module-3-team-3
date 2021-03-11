@@ -30,10 +30,9 @@ class Fillin extends React.Component {
           <label htmlFor="photo" className="fillin__label">
             Imagen de perfil
           </label>
-          <GetAvatar 
-          avatar={this.props.profile.avatar} 
-          isAvatarDefault={this.props.isAvatarDefault} 
-          updateAvatar={this.props.updateAvatar} />
+          <GetAvatar
+            name="photo" avatar={this.props.avatar} getAvatar={this.props.getAvatar}
+          />
           <InputGroup
             className="fillin__input js-input-email js-input-text"
             text="Email"

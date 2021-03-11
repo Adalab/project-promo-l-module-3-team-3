@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
+import ls from '../services/localStorage';
 
 class CardGenerator extends React.Component {
   constructor(props) {

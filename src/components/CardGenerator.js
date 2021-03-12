@@ -68,6 +68,7 @@ class CardGenerator extends React.Component {
       linkedin: '',
       github: '',
       palette: 1,
+      avatar:''
     });
   }
 

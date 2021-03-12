@@ -37,7 +37,9 @@ class CardGenerator extends React.Component {
   }
 
   componentDidUpdate() {
-    ls.set('data', this.state);
+    const data = {...this.state}
+    data.serverData = {}
+    ls.set('data', data);
   }
 
 

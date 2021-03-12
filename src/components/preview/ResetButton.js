@@ -7,12 +7,10 @@ const ResetButton = (props) => {
   };
 
   return (
-    <div className="preview__reset">
-      <button className="preview__reset--reset js-reset button__reset" onClick={handleReset}>
-        <i className="far fa-trash-alt "></i>
+      <button className="reset__button" onClick={handleReset}>
+        <i className="far fa-trash-alt reset__button--icon "></i>
         Reset
       </button>
-    </div>
   );
 };
 

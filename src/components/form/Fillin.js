@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../stylesheets/form/fillin.scss';
 import InputGroup from './InputGroup';
+import GetAvatar from './GetAvatar';
+
 
 class Fillin extends React.Component {
   render() {
@@ -28,19 +30,9 @@ class Fillin extends React.Component {
           <label htmlFor="photo" className="fillin__label">
             Imagen de perfil
           </label>
-
-          <div className="fillin__photo">
-            <button className="fillin__photo--button js__profile-trigger">Añadir imagen</button>
-            <input
-              type="file"
-              name="photo"
-              id="img-selector"
-              className="hidden-field input-required js__profile-upload-btn"
-              required
-            />
-            <div className="fillin__photo--preview js__profile-preview js-small-photo"></div>
-          </div>
-
+          <GetAvatar
+            name="photo" avatar={this.props.avatar} getAvatar={this.props.getAvatar}
+          />
           <InputGroup
             className="fillin__input js-input-email js-input-text"
             text="Email"

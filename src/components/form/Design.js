@@ -10,9 +10,9 @@ class Design extends React.Component {
           <h3 className="collapsable__colors--title">Colores</h3>
         </div>
         <div className="design">
+          <Palette i={0} palette={this.props.data.palette} handlePalette={this.props.handlePalette} />
           <Palette i={1} palette={this.props.data.palette} handlePalette={this.props.handlePalette} />
           <Palette i={2} palette={this.props.data.palette} handlePalette={this.props.handlePalette} />
-          <Palette i={3} palette={this.props.data.palette} handlePalette={this.props.handlePalette} />
         </div>
       </section>
     );

@@ -6,7 +6,7 @@ import Form from './form/Form';
 import Preview from './preview/Preview';
 import ResetButton from './preview/ResetButton';
 import fetchApi from '../services/fetchApi';
-
+import ls from '../services/localStorage';
 
 class CardGenerator extends React.Component {
   constructor(props) {
@@ -28,6 +28,16 @@ class CardGenerator extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.handleShare = this.handleShare.bind(this);
+  }
+  componentDidMount() {
+    const localStorageData = ls.get('data');
+    if (localStorageData) {
+      this.setState(localStorageData);
+    }
+  }
+
+  componentDidUpdate() {
+    ls.set('data', this.state);
   }
 
 
@@ -55,7 +65,7 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
-      palette: 1
+      palette: 1,
     });
   }
 
@@ -71,10 +81,15 @@ class CardGenerator extends React.Component {
       photo: this.state.avatar,
     };
     console.log(userData);
-    fetchApi(userData).then(serverData => {
-      this.setState({
-        serverData: {},
-      })
+  fetchApi(userData).then((response) => {
+      if (response.success === true) {
+        this.setState({
+          serverData: {
+            success: response.success,
+            cardURL: response.cardURL,
+          },
+        });
+      }
     });
   }
 

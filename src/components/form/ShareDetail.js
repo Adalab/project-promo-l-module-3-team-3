@@ -1,10 +1,10 @@
-import "../../stylesheets/form/share.scss";
+import "../../stylesheets/form/shareDetail.scss";
 
 const ShareDetail = (props) => {
 
     return (            
-            <div className='share-card hidden js-share__container js-card-result'>
-                <h2 className='share-card__text js-created'>
+            <div className='share-card'>
+                <h2 className='share-card__text'>
                         La tarjeta ha sido creada:
                 </h2>
                 <a href={props.data.serverData.cardURL} target='_blank'><p>{props.data.serverData.cardURL}</p></a>

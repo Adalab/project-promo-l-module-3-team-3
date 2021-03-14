@@ -12,7 +12,7 @@ class CardGenerator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: 1,
+      palette: 0,
       name: '',
       job: '',
       email: '',
@@ -67,7 +67,7 @@ class CardGenerator extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
-      palette: 1,
+      palette: 0,
       avatar:''
     });
   }

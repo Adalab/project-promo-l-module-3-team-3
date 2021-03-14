@@ -1,7 +1,7 @@
 @import '../core/variables';
 
 .collapsable {
-  border-bottom: 1px solid $colorFooter;
+  // border-bottom: 1px solid $colorFooter;
 
   &__header {
     cursor: pointer;
@@ -9,6 +9,7 @@
     flex-direction: row;
     padding: 10px 0 10px;
     align-items: center;
+    border-top: 1px solid $colorFooter;
     &:hover {
         color: $orange;
       }
@@ -46,6 +47,10 @@
 
     .collapsable__content {
       display: none;
+      // border-bottom: 1px solid $colorFooter;
     }
   }
+}
+.Diseña {
+  border-top: none;
 }

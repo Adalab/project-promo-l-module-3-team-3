@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import "../../stylesheets/form/share.scss";
-import ShareDetail from './ShareDetail';
 
 const Share = (props) => {
     const [open, setOpen] = useState(false);
@@ -11,7 +10,6 @@ const Share = (props) => {
     };
 
      const openClassName = open ? '' : 'close';
-
     // const shareDetailComponente = props.data.serverData.success === true ?
     // <ShareDetail data={props.data}/> : null;
 
@@ -24,7 +22,7 @@ const Share = (props) => {
 
         <div className="collapsable__content">{props.children}</div>
         {/* {shareDetailComponente} */}
-       
+
     </section>
     );
 }

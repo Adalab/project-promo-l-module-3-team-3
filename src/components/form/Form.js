@@ -26,7 +26,8 @@ const Form = (props) => {
       </Collapsable>
       <Collapsable name="Comparte" icon="fas fa-share-alt">
         <Share data={props.data} handleShare={props.handleShare}>
-            <ShareDetail data={props.data} />
+          {/* incluir */}
+            <ShareDetail data={props.data}/>
         </Share>
       </Collapsable>
     </form>

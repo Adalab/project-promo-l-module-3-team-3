@@ -1,7 +1,7 @@
 import "../../stylesheets/form/shareDetail.scss";
 
 const ShareDetail = (props) => {
-
+if (props.data.serverData.success === true) {
     return (            
             <div className='share-card'>
                 <h2 className='share-card__text'>
@@ -13,8 +13,16 @@ const ShareDetail = (props) => {
                         <i className='fab fa-twitter'></i> Compartir en Twitter
                     </a>
                 </button>
-            </div>
-    
+            </div>    
     );
+} else {
+    return (            
+            <div className='share-card'>
+                <p>Debes cumplimentar todos los campos para poder crear tu enlace</p>
+            </div>
+    );
+}
+
+
 }
 export default ShareDetail;

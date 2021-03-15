@@ -29,10 +29,34 @@ app.listen(serverPort, () => {
 //   res.json(response);
 // });
 
+
 app.post("/card", (req, res) => {
   console.log(req.body);
 
-  res.json(["hello, world"]);
+  const response = {};
+
+  if (!req.body.name) {
+    response.succes = false;
+    response.error = 'missing name parameter';
+  }
+  else if (!req.body.job) {
+    response.succes = false;
+    response.error = 'missing job parameter';
+  }
+  else if (!req.body.email) {
+    response.succes = false;
+    response.error = 'missing email parameter';
+  }
+  else if (!req.body.photo) {
+    response.succes = false;
+    response.error = 'missing photo parameter';
+  }
+  else {
+    response.success = true;
+    response.cardURL = "https://todo-ha-ido-bien.com"
+  }
+
+  res.json(response);
 });
 
 // app.get("/card/:id/", (req, res) => {

@@ -1,6 +1,6 @@
 const fetchApi = (data) => {
   //Servidor de los profes
-  const url = "/card";
+  const url = "http://localhost:3000/card";
   //luego habría que cambiarlo, no sé si por...
   // const url = 'https://profileawesome.herokuapp.com/card';
 

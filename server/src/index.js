@@ -14,6 +14,7 @@ app.listen(serverPort, () => {
   console.log(`App listening at http://localhost:${serverPort}`);
 });
 
+
 // // API request > POST > http://localhost:3000/card
 // server.post('/card', (req, res) => {
 //   // console request body params
@@ -23,3 +24,9 @@ app.listen(serverPort, () => {
 //   };
 //   res.json(response);
 // });
+
+app.post("/card", (req, res) => {
+  console.log(req.body);
+
+  res.json(["hello, world"]);
+});

@@ -1,8 +1,8 @@
 const fetchApi = (data) => {
   //Servidor de los profes
-  // const url = "https://profileawesome.herokuapp.com/card";
+  const url = "http://localhost:3000/card";
   //habría que cambiarlo
-  const url = 'https://profileawesome.herokuapp.com/card';
+  // const url = 'https://profileawesome.herokuapp.com/card';
 
   return fetch(url, {
     method: 'POST',

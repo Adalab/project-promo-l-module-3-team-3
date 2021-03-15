@@ -4,8 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "docs": "react-scripts build && rm -rf docs/ && mv build/ docs/",
+    "push": "git add docs/* && git commit -m \"Update github pages\" && git push",
+    "docs-and-push": "npm run docs && npm run push",
+    "build": "react-scripts build"
   },
   "author": "equipo-3",
   "license": "ISC",

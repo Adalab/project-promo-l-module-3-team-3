@@ -21,6 +21,7 @@ class CardGenerator extends React.Component {
       github: '',
       isAvatarDefault: true,
       avatar: '',
+      isLoading: false,
       serverData: {},
     };
     this.handlePalette = this.handlePalette.bind(this);
@@ -68,7 +69,8 @@ class CardGenerator extends React.Component {
       linkedin: '',
       github: '',
       palette: 0,
-      avatar:''
+      avatar:'',
+      serverData: {},
     });
   }
 
@@ -84,13 +86,19 @@ class CardGenerator extends React.Component {
       photo: this.state.avatar,
     };
     console.log(userData);
+  this.setState({
+          isLoading: true,
+        })
   fetchApi(userData).then((response) => {
+    this.setState({
+          isLoading: false
+        })
       if (response.success === true) {
         this.setState({
           serverData: {
             success: response.success,
             cardURL: response.cardURL,
-          },
+          }
         });
       }
     });

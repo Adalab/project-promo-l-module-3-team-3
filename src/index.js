@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+server.set('view engine', 'ejs');
+
 // init express aplication hay que ponerlo siempre
 const serverPort = process.env.PORT || 3000;
 app.listen(serverPort, () => {
@@ -18,6 +20,19 @@ app.listen(serverPort, () => {
 // // config express static server
 // const staticServerPath = './public'; // relative to the root of the project
 // app.use(express.static(staticServerPath));
+
+//IVAN CODE:
+server.get('/card/:id', (req, res) => {
+const data = {
+  //aquí los datos de la tarjeta
+  palette: 1,
+  name:"Pepita Grilla",
+  job:"conciencia",
+  //...
+};
+
+  res.render ('pages/card', data);
+});
 
 // API request > POST > http://localhost:3000/card
 // app.post('/card', (req, res) => {

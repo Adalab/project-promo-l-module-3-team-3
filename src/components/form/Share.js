@@ -10,8 +10,6 @@ const Share = (props) => {
     };
 
      const openClassName = open ? '' : 'close';
-    // const shareDetailComponente = props.data.serverData.success === true ?
-    // <ShareDetail data={props.data}/> : null;
 
     return (
     <section className={`collapsable collapsable3 share__container ${openClassName}`}>
@@ -21,8 +19,6 @@ const Share = (props) => {
             </button>  
 
         <div className="collapsable__content">{props.children}</div>
-        {/* {shareDetailComponente} */}
-
     </section>
     );
 }

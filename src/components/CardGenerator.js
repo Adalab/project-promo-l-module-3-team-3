@@ -23,7 +23,6 @@ class CardGenerator extends React.Component {
       avatar: '',
       isLoading: false,
       serverData: {},
-      // error: false
     };
     this.handlePalette = this.handlePalette.bind(this);
     this.handleInput = this.handleInput.bind(this);

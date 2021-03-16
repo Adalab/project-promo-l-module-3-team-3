@@ -4,6 +4,7 @@ import Collapsable from './Collapsable';
 import Design from './Design';
 import Share from './Share';
 import Fillin from './Fillin';
+import ShareDetail from './ShareDetail';
 
 const Form = (props) => {
   const handleForm = (ev) => {
@@ -24,9 +25,9 @@ const Form = (props) => {
           getAvatar={props.getAvatar} />
       </Collapsable>
       <Collapsable name="Comparte" icon="fas fa-share-alt">
-        <Share 
-          data={props.data}
-          handleShare={props.handleShare}/>
+        <Share data={props.data} handleShare={props.handleShare}>
+            <ShareDetail data={props.data}/>
+        </Share>
       </Collapsable>
     </form>
   );

@@ -1,7 +1,6 @@
 @import '../core/variables';
 
 .collapsable {
-  // border-bottom: 1px solid $colorFooter;
 
   &__header {
     cursor: pointer;
@@ -47,7 +46,6 @@
 
     .collapsable__content {
       display: none;
-      // border-bottom: 1px solid $colorFooter;
     }
   }
 }

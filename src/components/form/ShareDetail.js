@@ -3,7 +3,9 @@ import "../../stylesheets/form/shareDetail.scss";
 import Loader from '../Loader';
 
 const ShareDetail = (props) => {
-    if (props.data.isLoading === true) {
+
+    if (props.data.isLoading === true)
+        {
         return <Loader />
     }
     else if (props.data.serverData.success === true){

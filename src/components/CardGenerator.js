@@ -88,19 +88,19 @@ class CardGenerator extends React.Component {
     };
     console.log(userData);
   this.setState({
-          isLoading: false,
+          isLoading: true,
         })
   fetchApi(userData).then((response) => {
+    this.setState({
+          isLoading: false
+        })
       if (response.success === true) {
         this.setState({
           serverData: {
             success: response.success,
             cardURL: response.cardURL,
-          } 
+          }
         });
-        this.setState({
-          isLoading: false
-        })
       }
     });
   }

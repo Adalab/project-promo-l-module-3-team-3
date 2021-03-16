@@ -7,7 +7,7 @@
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
     "docs": "react-scripts build && rm -rf docs/ && mv build/ docs/",
-    "push": "git add docs/* && git commit -m \"Update github pages\" && git push",
+    "push": "git add docs/* && git commit -m 'Update github pages' && git push",
     "docs-and-push": "npm run docs && npm run push",
     "build": "react-scripts build"
   },

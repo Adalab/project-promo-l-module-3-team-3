@@ -91,11 +91,3 @@ app.post('/card', (req, res) => {
   res.status(200).json(response);   //responde con un status 200(todo ok) y la response, en este caso un json
 });
 
-
-
-// error de no encontrado, lanza página 404 (no está funcionando, creo)
-// app.get('*', (req, res) => {
-//   const notFoundFileRelativePath = '../public/404-not-found.html';
-//   const notFoundFileAbsolutePath = path.join(__dirname, notFoundFileRelativePath);
-//   res.status(404).sendFile(notFoundFileAbsolutePath);
-// });

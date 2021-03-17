@@ -5,31 +5,36 @@ const Database = require('better-sqlite3');
 
 // SERVER
 
-// config server hay que ponerlo siempre
+// configura el servidor, hay que ponerlo siempre
 const app = express();
-app.use(express.json({ limit: '10mb' }));
+app.use(express.json({ limit: '10mb' }));   //para limitar el tamaño de los archivos que se envían al servidor 
 app.use(cors());
 
+//configura ejs para el motor de plantillas
 app.set('view engine', 'ejs');
 
-// init express aplication hay que ponerlo siempre
+// inicia la aplicación de express, hay que ponerlo siempre
 const serverPort = process.env.PORT || 3000;
 app.listen(serverPort, () => {
   console.log(`App listening at http://localhost:${serverPort}`);
 });
 
-// init and config data base
+// inicia y configura la base de datos
 const db = new Database('./src/data/cards.db', {
-  // this line log in console all data base queries
+  // esta linea muestra en consola las queries de la base de datos
   verbose: console.log,
 });
 
-// config express static server
+// configura el servidor estático, escucha los archivos en public
 const staticServerPath = './public';
 app.use(express.static(staticServerPath));
 
+
+// ENDPOINTS:
+
+
 app.get('/card/:id', (req, res) => {
-  const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);
+  const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);     //selecciona todas las columnas de la base de datos
   const data = query.get(req.params.id);
 
   console.log(data);
@@ -37,21 +42,7 @@ app.get('/card/:id', (req, res) => {
   res.render('pages/card', data);
 });
 
-// app.get('/card/:id', (req, res) => {
-//   const data = {
-//     //aquí los datos de la tarjeta
-//     palette: 1,
-//     name: 'Nombre Apellidos',
-//     job: 'Front-end unicor',
-//     phone: '',
-//     email: 'sally-hill@gmail.com',
-//     linkedin: 'sallyhill',
-//     github: 'sallyhill',
-//     photo: '',
-//   };
 
-//   res.render('pages/card', data);
-// });
 
 app.post('/card', (req, res) => {
   console.log(req.body);
@@ -59,24 +50,24 @@ app.post('/card', (req, res) => {
   const response = {};
 
   if (!req.body.name) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing name parameter';
   } else if (!req.body.job) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing job parameter';
   } else if (!req.body.email) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing email parameter';
   } else if (!req.body.photo) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing photo parameter';
   } else if (!req.body.github) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing github parameter';
   } else if (!req.body.linkedin) {
-    response.succes = false;
+    response.success = false;
     response.error = 'missing linkedin parameter';
-  }  else {
+  }  else {                              //esta es la única condición que está funcionando: manda los datos a la base de datos
     const query = db.prepare('INSERT INTO cards (id, palette,name,job,email,phone,photo,linkedin,github) VALUES (?,?,?,?,?,?,?,?,?)');
     const result = query.run(req.body.id,req.body.palette,req.body.name,req.body.job, req.body.email,req.body.phone,req.body.photo,req.body.linkedin,req.body.github); 
     
@@ -84,12 +75,13 @@ app.post('/card', (req, res) => {
     response.cardURL = 'https://todo-ha-ido-bien.com';
   }
 
-  res.json(response);
+  res.status(200).json(response);   //responde con un status 200(todo ok) y la response, en este caso un json
 });
 
-// not found error
+
+
+// error de no encontrado, lanza página 404 (no está funcionando, creo)
 app.get('*', (req, res) => {
-  // relative to this directory
   const notFoundFileRelativePath = '../public/404-not-found.html';
   const notFoundFileAbsolutePath = path.join(__dirname, notFoundFileRelativePath);
   res.status(404).sendFile(notFoundFileAbsolutePath);

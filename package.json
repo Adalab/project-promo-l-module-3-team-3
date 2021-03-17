@@ -7,8 +7,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start-twice": "cd web && npm install && npm run build && cd .. && npm install && npm start",
-    "start": "node src/index.js",
+    "start": "cd web && npm install && npm run build && cd .. && npm install && node src/index.js",
     "dev": "cd web && npm start & cd .. && npm run dev"
   },
   "author": "equipo-3",

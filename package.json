@@ -8,11 +8,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "docs": "react-scripts build && rm -rf docs/ && mv build/ docs/",
-    "push": "git add docs/* && git commit -m 'Update github pages' && git push",
-    "docs-and-push": "npm run docs && npm run push",
-    "build": "react-scripts build"
+    "start": "node src/index.js"
   },
   "author": "equipo-3",
   "license": "ISC",
@@ -20,6 +16,7 @@
     "better-sqlite3": "^7.1.2",
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "path": "^0.12.7"
   }
 }

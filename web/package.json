@@ -16,8 +16,8 @@
   },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
-    "docs": "react-scripts build && rm -rf ../server/public && mv build/ ../server/public/",
-    "push": "git add ../server/public/* && git commit -m 'Update github pages' && git push",
+    "docs": "react-scripts build && rm -rf ../public && mv build/ ../public/",
+    "push": "git add ../public/* && git commit -m 'Update github pages' && git push",
     "docs-and-push": "npm run docs && npm run push",
     "build": "react-scripts build",
     "test": "react-scripts test",

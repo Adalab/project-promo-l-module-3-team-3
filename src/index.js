@@ -70,7 +70,16 @@ app.post('/card', (req, res) => {
   } else if (!req.body.photo) {
     response.succes = false;
     response.error = 'missing photo parameter';
-  } else {
+  } else if (!req.body.github) {
+    response.succes = false;
+    response.error = 'missing github parameter';
+  } else if (!req.body.linkedin) {
+    response.succes = false;
+    response.error = 'missing linkedin parameter';
+  }  else {
+    const query = db.prepare('INSERT INTO cards (id, palette,name,job,email,phone,photo,linkedin,github) VALUES (?,?,?,?,?,?,?,?,?)');
+    const result = query.run(req.body.id,req.body.palette,req.body.name,req.body.job, req.body.email,req.body.phone,req.body.photo,req.body.linkedin,req.body.github); 
+    
     response.success = true;
     response.cardURL = 'https://todo-ha-ido-bien.com';
   }

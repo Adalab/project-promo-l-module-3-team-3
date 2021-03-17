@@ -10,7 +10,8 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));   //para limitar el tamaño de los archivos que se envían al servidor 
 app.use(cors());
 
-//configura ejs para el motor de plantillas
+//configura ejs(embedded javascript templates) para el motor de plantillas. 
+// permite procesar la página html con extensión .ejs (nuestra card.ejs) en el servidor antes de servirla a la usuaria
 app.set('view engine', 'ejs');
 
 // inicia la aplicación de express, hay que ponerlo siempre
@@ -32,20 +33,20 @@ app.use(express.static(staticServerPath));
 
 // ENDPOINTS:
 
-
+//este aún no va
 app.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);     //selecciona todas las columnas de la base de datos
   const data = query.get(req.params.id);
 
-  console.log(data);
+  console.log(data);  
 
   res.render('pages/card', data);
 });
 
 
-
+//en este sólo funciona el último else
 app.post('/card', (req, res) => {
-  console.log(req.body);
+  console.log('reqbody', req.body);
 
   const response = {};
 

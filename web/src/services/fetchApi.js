@@ -1,11 +1,11 @@
 
 // durante la clase de hoy miércoles, falta acabarlo más abajo, creo
-// const isDevEnvironment = process.env.NODE_ENV === 'development'; // Booleano
-// const apiUrl = isDevEnvironment ? 'http://localhost:3000' : 'https://awesome-profile-cards-lolies.herokuapp.com/#/';
+const isDevEnvironment = process.env.NODE_ENV === 'development'; // Booleano
+const apiUrl = isDevEnvironment ? 'http://localhost:3000' : 'https://awesome-profile-cards-lolies.herokuapp.com/#/';
 
-// console.log('isDevEnvironment', isDevEnvironment);
-// console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-// console.log('apiUrl', apiUrl);
+console.log('isDevEnvironment', isDevEnvironment);
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+console.log('apiUrl', apiUrl);
 
 const fetchApi = (data) => {
  

@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const Database = require('better-sqlite3');
 
+
 // SERVER
 
 // configura el servidor, hay que ponerlo siempre
@@ -31,20 +32,23 @@ const staticServerPath = './public';
 app.use(express.static(staticServerPath));
 
 
-// ENDPOINTS:
+// ENDPOINTS, que son 'funciones' para decirle al servidor qué rutas escuchar
 
 //este aún no va
 app.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);     //selecciona todas las columnas de la base de datos
   const data = query.get(req.params.id);
 
-  console.log(data);  
+  console.log(data);
 
   res.render('pages/card', data);
 });
 
+//las GET que usa el navegador:
+//la ruta raiz sería http://localhost/ 
+//http://localhost/card/<numerito>
 
-//en este sólo funciona el último else
+//esta es la ruta http://localhost/card/ y, ahora mismo, sólo funciona el último else y guarda los datos de la tarjeta
 app.post('/card', (req, res) => {
   console.log('reqbody', req.body);
 
@@ -68,13 +72,21 @@ app.post('/card', (req, res) => {
   } else if (!req.body.linkedin) {
     response.success = false;
     response.error = 'missing linkedin parameter';
-  }  else {                              //esta es la única condición que está funcionando: manda los datos a la base de datos
-    const query = db.prepare('INSERT INTO cards (id, palette,name,job,email,phone,photo,linkedin,github) VALUES (?,?,?,?,?,?,?,?,?)');
-    const result = query.run(req.body.id,req.body.palette,req.body.name,req.body.job, req.body.email,req.body.phone,req.body.photo,req.body.linkedin,req.body.github); 
-    
+  } else {                              //esta es la única condición que está funcionando: manda los datos a la base de datos
+    const stmt = db.prepare('INSERT INTO cards (palette,name,job,email,phone,photo,linkedin,github) VALUES (?,?,?,?,?,?,?,?)');
+    const result = stmt.run(req.body.palette, req.body.name, req.body.job, req.body.email, req.body.phone, req.body.photo, req.body.linkedin, req.body.github);
+
     response.success = true;
-    response.cardURL = 'https://todo-ha-ido-bien.com';
+
+    //console.log('HOST', localhost)
+    if (req.hostname === 'localhost') {
+      response.cardURL = "http://localhost:3000/card/" + result.lastInsertRowid;
+    }
+    else {
+      response.cardURL = 'https://awesome-profile-cards-lolies.herokuapp.com/#/' + result.lastInsertRowid;
+    }
   }
+
 
   res.status(200).json(response);   //responde con un status 200(todo ok) y la response, en este caso un json
 });
@@ -82,8 +94,8 @@ app.post('/card', (req, res) => {
 
 
 // error de no encontrado, lanza página 404 (no está funcionando, creo)
-app.get('*', (req, res) => {
-  const notFoundFileRelativePath = '../public/404-not-found.html';
-  const notFoundFileAbsolutePath = path.join(__dirname, notFoundFileRelativePath);
-  res.status(404).sendFile(notFoundFileAbsolutePath);
-});
+// app.get('*', (req, res) => {
+//   const notFoundFileRelativePath = '../public/404-not-found.html';
+//   const notFoundFileAbsolutePath = path.join(__dirname, notFoundFileRelativePath);
+//   res.status(404).sendFile(notFoundFileAbsolutePath);
+// });

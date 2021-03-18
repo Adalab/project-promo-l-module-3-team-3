@@ -1,10 +1,10 @@
 {
   "name": "look-like-loop",
   "version": "1.0.0",
+  "description": "Server (static and API) for Awesome Profile Cards demonstration",
   "engines": {
     "node": "14.15.1"
   },
-  "description": "",
   "main": "src/index.js",
   "scripts": {
     "start": "cd web && npm install && npm run build && cd .. && npm install && node src/index.js",

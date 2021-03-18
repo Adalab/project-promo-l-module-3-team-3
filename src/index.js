@@ -34,7 +34,7 @@ app.use(express.static(staticServerPath));
 
 // ENDPOINTS, que son 'funciones' para decirle al servidor qué rutas escuchar
 
-//este aún no va
+
 app.get('/card/:id', (req, res) => {
   const query = db.prepare(`SELECT * FROM cards WHERE id = ?`);     //selecciona todas las columnas de la base de datos
   const data = query.get(req.params.id);
@@ -44,11 +44,8 @@ app.get('/card/:id', (req, res) => {
   res.render('pages/card', data);
 });
 
-//las GET que usa el navegador:
-//la ruta raiz sería http://localhost/ 
-//http://localhost/card/<numerito>
 
-//esta es la ruta http://localhost/card/ y, ahora mismo, sólo funciona el último else y guarda los datos de la tarjeta
+//esta es la ruta http://localhost/card/ el último else guarda los datos de la tarjeta
 app.post('/card', (req, res) => {
   console.log('reqbody', req.body);
 
@@ -72,13 +69,12 @@ app.post('/card', (req, res) => {
   } else if (!req.body.linkedin) {
     response.success = false;
     response.error = 'missing linkedin parameter';
-  } else {                              //esta es la única condición que está funcionando: manda los datos a la base de datos
+  } else {                              
     const stmt = db.prepare('INSERT INTO cards (palette,name,job,email,phone,photo,linkedin,github) VALUES (?,?,?,?,?,?,?,?)');
     const result = stmt.run(req.body.palette, req.body.name, req.body.job, req.body.email, req.body.phone, req.body.photo, req.body.linkedin, req.body.github);
 
     response.success = true;
 
-    //console.log('HOST', localhost)
     if (req.hostname === 'localhost') {
       response.cardURL = "http://localhost:3000/card/" + result.lastInsertRowid;
     }

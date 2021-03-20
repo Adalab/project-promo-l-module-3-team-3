@@ -85,7 +85,6 @@ class CardGenerator extends React.Component {
       github: this.state.github,
       photo: this.state.avatar,
     };
-    console.log(userData);
   this.setState({
           isLoading: true,
         })

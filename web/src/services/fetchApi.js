@@ -5,13 +5,9 @@ const apiUrl = isDevEnvironment ? 'http://localhost:3000' : 'https://awesome-pro
 
 
 const fetchApi = (data) => {
-  console.log(apiUrl);
- 
-  const url = "http://localhost:3000/card";
- 
-  // const url = 'https://profileawesome.herokuapp.com/card';
+console.log(apiUrl)
 
-  return fetch(url, {
+  return fetch(`${apiUrl}/card`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {

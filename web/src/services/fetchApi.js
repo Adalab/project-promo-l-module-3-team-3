@@ -1,7 +1,9 @@
 
 const isDevEnvironment = process.env.NODE_ENV === 'development';
-const apiUrl = isDevEnvironment ? 'http://localhost:3000' : 'https://awesome-profile-cards-lolies.herokuapp.com';
+const apiUrl = isDevEnvironment ? 'http://localhost:3000' : 'https://awesome-profile-cards-lolies.herokuapp.com/#/';
 
+
+//`${apiUrl}/card`
 
 const fetchApi = (data) => {
 

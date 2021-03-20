@@ -7,7 +7,7 @@ const fetchApi = (data) => {
 
 console.log(apiUrl)
 
-  return fetch(apiUrl, {
+  return fetch(`${apiUrl}/card`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {

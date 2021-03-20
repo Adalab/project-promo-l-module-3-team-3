@@ -45,7 +45,7 @@ app.get('/card/:id', (req, res) => {
 });
 
 
-//esta es la ruta http://localhost/card/ el último else guarda los datos de la tarjeta
+//esta es la ruta http://localhost/card/ ---el último else guarda los datos de la tarjeta
 app.post('/card', (req, res) => {
   console.log('reqbody', req.body);
 
